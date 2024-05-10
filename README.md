@@ -55,6 +55,7 @@ Word Frequency Analysis:
 Counts and visualizes the most frequent words in the 'Main Responsibility' column, excluding custom stop words.
 
 ## Full Code
+```python
   import streamlit as st
   
   import pandas as pd
