@@ -47,6 +47,8 @@ Job Titles with Hours >< 176: Shows job titles with monthly hours greater or les
 Distinct Job Titles Count by Division/Department: Visualizes the count of distinct job titles by either division or department.
 Department and Job Title Counts by Country: Displays the count of distinct departments and job titles across different countries.
 Main Responsibility Counts: Shows counts of main responsibilities by department and job title.
+![image](https://github.com/symeon158/Job-Analysis-Dashboard-Text-Mining/assets/106148298/50ff96e5-bff2-483f-9064-5444fe112b94)
+
 ## Text Mining Details
 TF-IDF Analysis:
 Lemmatizes text from the 'Main Responsibility' column.
