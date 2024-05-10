@@ -47,6 +47,7 @@ Job Titles with Hours >< 176: Shows job titles with monthly hours greater or les
 Distinct Job Titles Count by Division/Department: Visualizes the count of distinct job titles by either division or department.
 Department and Job Title Counts by Country: Displays the count of distinct departments and job titles across different countries.
 Main Responsibility Counts: Shows counts of main responsibilities by department and job title.
+
 ![image](https://github.com/symeon158/Job-Analysis-Dashboard-Text-Mining/assets/106148298/230e1ef2-beb4-42c4-bcb4-e58a099a9f4c)
 ![image](https://github.com/symeon158/Job-Analysis-Dashboard-Text-Mining/assets/106148298/50ff96e5-bff2-483f-9064-5444fe112b94)
 ![image](https://github.com/symeon158/Job-Analysis-Dashboard-Text-Mining/assets/106148298/076adcb3-c109-47d5-bb5d-4bd21232cf53)
@@ -58,6 +59,7 @@ Lemmatizes text from the 'Main Responsibility' column.
 Displays top TF-IDF scores and keywords.
 Word Frequency Analysis:
 Counts and visualizes the most frequent words in the 'Main Responsibility' column, excluding custom stop words.
+
 ![image](https://github.com/symeon158/Job-Analysis-Dashboard-Text-Mining/assets/106148298/a6deb13e-a2ee-4a57-ab48-fc2e7b09eb61)
 ![image](https://github.com/symeon158/Job-Analysis-Dashboard-Text-Mining/assets/106148298/b472b594-fa21-4785-8bd7-5a17c575e28f)
 ![image](https://github.com/symeon158/Job-Analysis-Dashboard-Text-Mining/assets/106148298/e309250f-04b5-4ba9-bcc5-f39da6c0687e)
