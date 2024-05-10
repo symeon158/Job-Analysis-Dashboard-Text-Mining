@@ -57,21 +57,13 @@ Counts and visualizes the most frequent words in the 'Main Responsibility' colum
 ## Full Code
 ```python
   import streamlit as st
-  
   import pandas as pd
-  
   import plotly.express as px
-  
   from sklearn.feature_extraction.text import TfidfVectorizer
-  
   from collections import Counter
-  
   from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
-  
   import plotly.graph_objects as go
-  
   import spacy
-  
   import re
   
   def custom_tokenizer(text):
