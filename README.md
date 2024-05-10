@@ -2,67 +2,97 @@
 
 I developed a powerful Job Analysis Dashboard leveraging Streamlit, Plotly, and SpaCy to transform raw job data into actionable insights. This interactive tool is designed for HR professionals and analysts to seamlessly upload and visualize job data, providing a comprehensive view of job titles, departments, and responsibilities across various divisions and countries.
 
-
 ## Table of Contents
-1. [Introduction](#introduction)
-2. [Features](#features)
-3. [Installation](#installation)
-4. [Usage](#usage)
-5. [File Upload Instructions](#file-upload-instructions)
-6. [Visualization Details](#visualization-details)
-7. [Text Mining Details](#text-mining-details)
-8. [Full Code](#full-code)
+- [Project Overview](#project-overview)
+- [Key Components and Functionalities](#key-components-and-functionalities)
+  - [User Interface](#user-interface)
+  - [Data Handling and Preprocessing](#data-handling-and-preprocessing)
+  - [Visualizations Tab](#visualizations-tab)
+  - [Text Mining Tab](#text-mining-tab)
+  - [Execution Flow](#execution-flow)
+- [Technologies and Libraries Used](#technologies-and-libraries-used)
+- [Benefits and Use Cases](#benefits-and-use-cases)
+- [Potential Enhancements](#potential-enhancements)
+- [Conclusion](#conclusion)
+- [Full Code](#full-code)
 
-## Introduction
-The Job Analysis Dashboard is a comprehensive tool designed to analyze and visualize job-related data from Excel files. It provides insights into job titles, departments, divisions, and main responsibilities.
+## Project Overview
+The Job Analysis Dashboard is an interactive web application developed using Streamlit, designed to analyze job-related data from uploaded Excel files. This dashboard provides users with a comprehensive suite of tools for visualizing job metrics and performing text mining on job descriptions, particularly focusing on the main responsibilities of various job titles.
 
-## Features
-- **File Upload**: Upload Excel files for analysis.
-- **Data Filtering**: Initial and advanced filtering options.
-- **Visualizations**:
-  - Job Titles Count by Division
-  - Job Titles with Hours >< 176
-  - Distinct Job Titles Count by Division/Department
-  - Department and Job Title Counts by Country
-  - Main Responsibility Counts
-- **Text Mining**:
-  - TF-IDF Analysis
-  - Word Frequency Analysis
+## Key Components and Functionalities
 
-## Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/job-analysis-dashboard.git
+### User Interface
+- **File Uploader**: A sidebar widget allows users to upload Excel files containing job data. The app automatically reads and displays column names from the uploaded file for further interaction.
+- **Tabs Navigation**: The app is divided into two main tabs:
+  - **Visualizations**
+  - **Text Mining**
 
-## Usage
-Run the Streamlit app:
-streamlit run app.py
-Upload your Excel file using the sidebar file uploader.
-Use the checkboxes and filters to explore the visualizations and text mining features.
-File Upload Instructions
-Ensure your Excel file has the required columns such as DIVISION:, DEPARTMENT, JOB TITLE:, A/A, Sum Total hours per month, Country, Main Responsibility , and Category.
-## Visualization Details
-Job Titles Count by Division: Displays the count of distinct job titles within each division.
-Job Titles with Hours >< 176: Shows job titles with monthly hours greater or less than 176.
-Distinct Job Titles Count by Division/Department: Visualizes the count of distinct job titles by either division or department.
-Department and Job Title Counts by Country: Displays the count of distinct departments and job titles across different countries.
-Main Responsibility Counts: Shows counts of main responsibilities by department and job title.
+### Data Handling and Preprocessing
+- **Custom Tokenizer**: Filters out numerical data from text fields to clean the text data.
+- **Lemmatization**: Uses the spaCy language model to convert words to their base forms, enhancing the quality of text mining.
+- **Caching**: The spaCy model is cached to optimize performance, reducing the need to reload the model repeatedly.
 
+### Visualizations Tab
+- **Initial Filter Options**: Users can filter data based on selected columns and values.
+- **Data Display**: An expandable section to view the filtered data.
+- **Job Titles Count**: Displays the count of distinct job titles by division using bar charts.
+- **Job Hours Analysis**: Visualizes job titles with monthly hours greater or less than 176 hours.
+- **General Visualization**:
+  - Counts distinct job titles by division or department.
+  - Users can select visualization criteria.
+- **Department and Job Title Analysis**:
+  - Shows counts of distinct departments and job titles by country.
+  - Provides bar charts to visualize department and job title counts.
+- **Main Responsibility Counts**:
+  - Displays counts of main responsibilities by department and job title.
+  - Uses color-coded bar charts to highlight counts less than or greater than a specific threshold (8).
+ 
 ![image](https://github.com/symeon158/Job-Analysis-Dashboard-Text-Mining/assets/106148298/230e1ef2-beb4-42c4-bcb4-e58a099a9f4c)
 ![image](https://github.com/symeon158/Job-Analysis-Dashboard-Text-Mining/assets/106148298/50ff96e5-bff2-483f-9064-5444fe112b94)
 ![image](https://github.com/symeon158/Job-Analysis-Dashboard-Text-Mining/assets/106148298/076adcb3-c109-47d5-bb5d-4bd21232cf53)
 ![image](https://github.com/symeon158/Job-Analysis-Dashboard-Text-Mining/assets/106148298/98c4cf8a-22ae-4ee8-b038-a24ae51b7637)
 
-## Text Mining Details
-TF-IDF Analysis:
-Lemmatizes text from the 'Main Responsibility' column.
-Displays top TF-IDF scores and keywords.
-Word Frequency Analysis:
-Counts and visualizes the most frequent words in the 'Main Responsibility' column, excluding custom stop words.
-
+### Text Mining Tab
+- **Advanced Filter Options**:
+  - Allows filtering by category, country, and job title if these columns exist in the dataset.
+- **TF-IDF Analysis**:
+  - Performs Term Frequency-Inverse Document Frequency (TF-IDF) analysis on the "Main Responsibility" column.
+  - Displays top keywords and TF-IDF scores.
+  - Provides a color-gradient visualization of TF-IDF scores.
+- **Word Frequency Analysis**:
+  - Analyzes word frequency in the "Main Responsibility" column, excluding common stop words.
+  - Displays the top 10 most frequent words with their frequencies using bar charts.
+ 
 ![image](https://github.com/symeon158/Job-Analysis-Dashboard-Text-Mining/assets/106148298/a6deb13e-a2ee-4a57-ab48-fc2e7b09eb61)
 ![image](https://github.com/symeon158/Job-Analysis-Dashboard-Text-Mining/assets/106148298/b472b594-fa21-4785-8bd7-5a17c575e28f)
 ![image](https://github.com/symeon158/Job-Analysis-Dashboard-Text-Mining/assets/106148298/e309250f-04b5-4ba9-bcc5-f39da6c0687e)
+
+### Execution Flow
+- The `main` function orchestrates the entire application workflow, from file upload to data visualization and text analysis.
+- Conditional logic ensures that functionalities are only accessible when relevant data is available (e.g., "Main Responsibility" column).
+
+## Technologies and Libraries Used
+- **Streamlit**: For building the interactive web application.
+- **Pandas**: For data manipulation and analysis.
+- **Plotly Express**: For creating interactive and aesthetically pleasing visualizations.
+- **Scikit-learn**: For text feature extraction using TF-IDF.
+- **SpaCy**: For natural language processing, particularly lemmatization.
+- **Re**: For regular expression operations to clean text data.
+- **Collections (Counter)**: For counting word frequencies in text data.
+
+## Benefits and Use Cases
+- **Ease of Use**: The dashboard provides an intuitive interface for non-technical users to upload and analyze job data without needing to write code.
+- **Insightful Visualizations**: Users can quickly generate visual insights into job titles, hours, and departmental distributions.
+- **Text Mining Capabilities**: Offers advanced text analysis features to uncover key terms and patterns in job responsibilities, aiding in understanding job roles and requirements.
+
+## Potential Enhancements
+- **Automated Data Cleaning**: Implement additional data cleaning steps to handle missing or inconsistent data more robustly.
+- **Expanded Filtering Options**: Add more dynamic filtering criteria based on user feedback.
+- **Enhanced Visualizations**: Incorporate more diverse chart types and interactive elements.
+- **Real-time Updates**: Enable real-time data updates and streaming for continuous data monitoring.
+
+## Conclusion
+The Job Analysis Dashboard is a powerful tool for organizations and HR professionals to analyze and visualize job-related data efficiently. Its combination of robust data handling, advanced text mining, and user-friendly design makes it an invaluable resource for deriving actionable insights from complex datasets.
 
 ## Full Code
 ```python
