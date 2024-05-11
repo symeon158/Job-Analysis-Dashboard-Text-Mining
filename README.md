@@ -277,7 +277,7 @@ def main():
             # Extend the stop words list with your specific words
             custom_stop_words = list(ENGLISH_STOP_WORDS) + ['&', 'on', 'alumil', 'new', 'daily', 'monthly', '/', 'albania', 'weekly', 'annual', 'aluminium', 'kosovo','yearly','aluminum','kosovo.', 'controll','']
 
-            # Advanced filtering options in the sidebar for Category and JOB TITLE:
+            # Advanced filtering options in the sidebar for Category, Country and JOB TITLE:
             if st.sidebar.checkbox('Show Advanced Filter Options'):
                 # Filtering by Category
                 if 'Category' in column_names:
