@@ -1,6 +1,6 @@
 # Job Analysis Dashboard
 
-I developed a powerful Job Analysis Dashboard leveraging Streamlit, Plotly, and SpaCy to transform raw job data into actionable insights. This interactive tool is designed for HR professionals and analysts to seamlessly upload and visualize job data, providing a comprehensive view of job titles, departments, and responsibilities across various divisions and countries.
+I developed a powerful Job Analysis Dashboard leveraging Streamlit, Plotly, and SpaCy to transform raw job data into actionable insights. This interactive tool is designed for HR professionals and analysts to seamlessly upload and visualize job data, providing a comprehensive view of job titles, departments, and responsibilities across various divisions and countries. The script "Merge Multiple Workbooks & Sheets" automates the process of extracting, cleaning, merging, and summarizing data from multiple .xlsm files across various subfolders.
 
 ## Table of Contents
 - [Project Overview](#project-overview)
