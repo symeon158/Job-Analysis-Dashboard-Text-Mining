@@ -3,7 +3,7 @@ import openpyxl
 import os
 
 # Main folder path containing subfolders with .xlsm files
-main_folder_path = r'C:\Users\sy.papadopoulos\OneDrive - Alumil S.A\Desktop\Countries'
+main_folder_path = r'...mypath'
 
 def find_time_spend_row(sheet, column='G'):
     """Find the row above 'Time spent'."""
